@@ -54,17 +54,17 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 80px;
+      height: 88px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    /* Clip the PNG's built-in whitespace so the logo mark fills the space */
+    /* Render the image larger than the container to crop the built-in whitespace */
     .nav-logo {
       display: block;
-      width: 130px;
-      height: 86px;
+      width: 120px;
+      height: 80px;
       overflow: hidden;
       position: relative;
       flex-shrink: 0;
@@ -72,12 +72,11 @@
 
     .nav-logo img {
       position: absolute;
-      height: 130px;
-      width: 130px;
+      height: 120px;
+      width: 120px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      mix-blend-mode: multiply;
     }
 
     .nav-links {
@@ -134,7 +133,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      padding-top: 80px;
+      padding-top: 88px;
     }
 
     .hero-bg {
@@ -754,7 +753,7 @@
       .nav-links.open {
         display: flex;
         position: absolute;
-        top: 80px;
+        top: 88px;
         left: 0; right: 0;
         background: var(--white);
         padding: 8px 24px 16px;
