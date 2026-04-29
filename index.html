@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Castillo Diamond Construction, LLC | Water Mitigation & Restoration</title>
+  <meta name="description" content="Castillo Diamond Construction — expert water mitigation, fire restoration, drywall, and flooring services. We work with your insurance so you don't have to stress." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1B3A6E;
+      --blue:   #2E86C1;
+      --silver: #8E9BA8;
+      --light:  #F4F7FB;
+      --white:  #FFFFFF;
+      --dark:   #111827;
+      --gray:   #6B7280;
+      --border: #E5E7EB;
+      --accent: #D4AF37; /* gold accent */
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(27,58,110,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ─────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Clip the PNG's built-in whitespace so the logo mark fills the space */
+    .nav-logo {
+      display: block;
+      width: 130px;
+      height: 86px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      position: absolute;
+      height: 130px;
+      width: 130px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--blue) !important; color: var(--white) !important; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ───────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('D4344793-440F-4FF4-8EAD-FC5CF3FA2505.png') center/cover no-repeat;
+      filter: brightness(0.35);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(46,134,193,0.25);
+      border: 1px solid rgba(46,134,193,0.5);
+      color: #7EC8E3;
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span { color: #7EC8E3; }
+
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: #1a6fa8; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 64px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat { color: var(--white); }
+    .hero-stat strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: #7EC8E3;
+    }
+    .hero-stat span { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+    /* ── TRUST BAR ──────────────────────────────── */
+    .trust-bar {
+      background: var(--navy);
+      padding: 20px 24px;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .trust-item i { color: #7EC8E3; font-size: 18px; }
+
+    /* ── SECTION COMMON ─────────────────────────── */
+    section { padding: 96px 24px; }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray);
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    /* ── SERVICES ───────────────────────────────── */
+    .services { background: var(--light); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border-top: 4px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(27,58,110,0.15);
+      border-top-color: var(--blue);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+
+    .service-card .learn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      margin-top: 16px;
+      transition: gap 0.2s;
+    }
+
+    .service-card .learn-link:hover { gap: 10px; }
+
+    /* ── GALLERY ────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card:hover img { transform: scale(1.06); }
+
+    .gallery-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,58,110,0.8) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .gallery-card:hover .overlay { opacity: 1; }
+
+    .gallery-card .overlay span {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .gallery-card.wide { grid-column: span 2; }
+
+    /* ── WHY US ─────────────────────────────────── */
+    .why { background: var(--light); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .why-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(27,58,110,0.18);
+    }
+
+    .why-image img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .why-item-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    .why-item-text h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .why-item-text p { font-size: 14px; color: var(--gray); }
+
+    /* ── PROCESS ────────────────────────────────── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      counter-reset: step;
+    }
+
+    .step {
+      text-align: center;
+      padding: 36px 20px;
+      position: relative;
+    }
+
+    .step::after {
+      content: '';
+      position: absolute;
+      top: 48px;
+      right: -12px;
+      width: 24px;
+      height: 2px;
+      background: var(--border);
+    }
+
+    .step:last-child::after { display: none; }
+
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .step h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .step p { font-size: 14px; color: var(--gray); }
+
+    /* ── CONTACT ────────────────────────────────── */
+    .contact { background: var(--navy); }
+
+    .contact .section-label { color: #7EC8E3; }
+    .contact .section-title { color: var(--white); }
+    .contact .section-sub { color: rgba(255,255,255,0.65); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info { color: var(--white); }
+
+    .contact-info h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .contact-detail i {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7EC8E3;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 18px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .social-link:hover { background: var(--blue); }
+
+    /* FORM */
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .contact-form h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--white);
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(46,134,193,0.15);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    #water-fields { display: none; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: var(--blue); transform: translateY(-2px); }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 12px;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 16px;
+    }
+
+    .form-success i {
+      font-size: 48px;
+      color: #22C55E;
+      margin-bottom: 16px;
+    }
+
+    .form-success h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-success p { color: var(--gray); font-size: 15px; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      background: #0D2247;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 14px;
+    }
+
+    footer strong { color: var(--white); }
+
+    /* ── LIGHTBOX ───────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: var(--white);
+      font-size: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; }
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 80px;
+        left: 0; right: 0;
+        background: var(--white);
+        padding: 8px 24px 16px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      }
+      .nav-links.open li { border-bottom: 1px solid var(--border); }
+      .nav-links.open li:last-child { border-bottom: none; padding-top: 12px; }
+      .nav-links.open a { display: block; padding: 14px 0; font-size: 16px; }
+      .nav-links.open .nav-cta {
+        display: block;
+        text-align: center;
+        border-radius: 8px;
+        padding: 14px;
+      }
+      .hamburger {
+        display: flex;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+      }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-image { order: -1; }
+      .why-image img { height: 300px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .gallery-card.wide { grid-column: span 1; }
+      .hero-stats { gap: 28px; }
+      .step::after { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      /* Trust bar scrolls horizontally instead of wrapping messily */
+      .trust-bar-inner {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 28px;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .trust-bar-inner::-webkit-scrollbar { display: none; }
+      .trust-item { flex-shrink: 0; }
+
+      .process-steps { grid-template-columns: 1fr 1fr; }
+
+      .hero-stats {
+        gap: 20px;
+        justify-content: flex-start;
+      }
+      .hero-stat strong { font-size: 28px; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 64px 16px; }
+      .contact-form { padding: 24px 16px; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+
+      /* Prevent iOS from zooming in on form focus */
+      .form-group input,
+      .form-group select,
+      .form-group textarea { font-size: 16px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+
+      .hero-stats { flex-direction: column; gap: 16px; }
+      .hero-stat { display: flex; align-items: center; gap: 12px; }
+      .hero-stat strong { font-size: 28px; display: inline; }
+      .hero-stat span { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">
+      <img src="logo.png" alt="Castillo Diamond Construction, LLC" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Our Work</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact" class="nav-cta">Get Free Estimate</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fa-solid fa-shield-check"></i>
+      Licensed &amp; Insurance Approved
+    </div>
+    <h1>Damage Happens.<br /><span>We Make It Right.</span></h1>
+    <p>
+      Castillo Diamond Construction handles water mitigation, fire restoration, drywall, and flooring — working directly with your insurance so the process is as painless as possible.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">
+        <i class="fa-solid fa-message"></i>
+        Get a Free Estimate
+      </a>
+      <a href="#gallery" class="btn-outline">
+        <i class="fa-solid fa-images"></i>
+        See Our Work
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>24/7</strong>
+        <span>Emergency Response</span>
+      </div>
+      <div class="hero-stat">
+        <strong>100%</strong>
+        <span>Insurance-Friendly</span>
+      </div>
+      <div class="hero-stat">
+        <strong>5★</strong>
+        <span>Client Satisfaction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ─────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <i class="fa-solid fa-droplet"></i>
+      Water Mitigation
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-fire-extinguisher"></i>
+      Fire Restoration
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-hammer"></i>
+      Drywall &amp; Repairs
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-layer-group"></i>
+      Flooring
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+      Insurance Claims Assistance
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ──────────────────────────────────── -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Full-Service Restoration<br />Under One Roof</h2>
+    <p class="section-sub">From the moment damage occurs to the final coat of paint, we handle every step of the restoration process.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+        <h3>Water Mitigation</h3>
+        <p>Burst pipes, flooding, appliance leaks — we respond fast to dry out and protect your property before mold sets in. We work directly with your insurance adjuster.</p>
+        <a class="learn-link" href="#contact">Get Help Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+        <h3>Fire &amp; Smoke Restoration</h3>
+        <p>Fire damage is devastating. We handle structural repairs, smoke odor removal, and full restoration — getting your home or business back to pre-loss condition.</p>
+        <a class="learn-link" href="#contact">Get Help Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <h3>Drywall</h3>
+        <p>Whether it's patching from water damage or full wall replacement, our crew delivers seamless finishes that look brand new — textured or smooth.</p>
+        <a class="learn-link" href="#contact">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Flooring</h3>
+        <p>Hardwood, tile, LVP, and more. We remove damaged flooring and install new material with precision — matching existing finishes when possible.</p>
+        <a class="learn-link" href="#contact">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ───────────────────────────────────── -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-label">Before &amp; After</div>
+    <h2 class="section-title">The Castillo Difference</h2>
+    <p class="section-sub">Real projects, real results. Every job we take is treated like it's our own home.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-card wide" onclick="openLightbox('ci1.png', 'Bathroom Renovation — Before &amp; After')">
+        <img src="ci1.png" alt="Bathroom before and after renovation" loading="lazy" />
+        <div class="overlay"><span>Bathroom Renovation — Before &amp; After</span></div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('3858AECD-6DB5-4AA8-90D4-1151CDBE56CA.png', 'Completed Bathroom Remodel')">
+        <img src="3858AECD-6DB5-4AA8-90D4-1151CDBE56CA.png" alt="Completed bathroom remodel" loading="lazy" />
+        <div class="overlay"><span>Completed Bathroom Remodel</span></div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('F45E8996-D28A-4841-84C1-432133F89A5A.png', 'Kitchen Restoration')">
+        <img src="F45E8996-D28A-4841-84C1-432133F89A5A.png" alt="Kitchen renovation" loading="lazy" />
+        <div class="overlay"><span>Kitchen Restoration</span></div>
+      </div>
+      <div class="gallery-card wide" onclick="openLightbox('D4344793-440F-4FF4-8EAD-FC5CF3FA2505.png', 'Water Mitigation in Progress')">
+        <img src="D4344793-440F-4FF4-8EAD-FC5CF3FA2505.png" alt="Castillo team performing water mitigation" loading="lazy" />
+        <div class="overlay"><span>Water Mitigation — Team in Action</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ─────────────────────────────────────── -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="why-image">
+        <img src="3858AECD-6DB5-4AA8-90D4-1151CDBE56CA.png" alt="Finished bathroom restoration" />
+      </div>
+      <div>
+        <div class="section-label">Why Castillo Diamond</div>
+        <h2 class="section-title">We Don't Just Fix Damage — We Restore Peace of Mind</h2>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="why-item-text">
+              <h4>24/7 Emergency Response</h4>
+              <p>Water and fire damage don't wait. Neither do we. Call us any time — we'll be there.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fa-solid fa-file-contract"></i></div>
+            <div class="why-item-text">
+              <h4>Insurance Claim Experts</h4>
+              <p>We communicate directly with your insurance company and adjuster to make sure everything is covered correctly.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fa-solid fa-person-digging"></i></div>
+            <div class="why-item-text">
+              <h4>Hands-On Ownership</h4>
+              <p>Henry Castillo oversees every job personally. You get accountability, not a call center.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="why-item-text">
+              <h4>Quality Craftsmanship</h4>
+              <p>We take pride in finishes that look like nothing ever happened. Every detail, every time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ───────────────────────────────────── -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple. Fast. Stress-Free.</h2>
+    <p class="section-sub">We've streamlined the restoration process so you can focus on getting back to normal.</p>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Contact Us</h4>
+        <p>Call, text, or fill out the form below. We'll respond within the hour.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Free Assessment</h4>
+        <p>We come to your property, assess the damage, and give you a clear plan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Insurance Coordination</h4>
+        <p>We work with your insurer directly — fewer headaches for you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Restoration Complete</h4>
+        <p>Your property is restored to pre-loss condition. We don't leave until it's right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+
+      <!-- Left: info -->
+      <div class="contact-info">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p class="section-sub">Fill out the form and Henry will personally reach out to you — usually within the hour.</p>
+
+        <div class="contact-detail">
+          <i class="fa-solid fa-phone"></i>
+          <span>Available 24/7 for emergencies</span>
+        </div>
+        <div class="contact-detail">
+          <i class="fa-solid fa-envelope"></i>
+          <span>CastilloDiamondConstruction@gmail.com</span>
+        </div>
+        <div class="contact-detail">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Serving the greater area — licensed &amp; insured</span>
+        </div>
+
+        <div class="social-links">
+          <a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div>
+        <div class="contact-form">
+          <h3>Get Your Free Estimate</h3>
+
+          <!--
+            SETUP INSTRUCTIONS:
+            1. Go to https://formspree.io and create a free account
+            2. Create a new form and add Henry's email address
+            3. Replace "YOUR_FORM_ID" in the action below with your Formspree form ID
+               Example: action="https://formspree.io/f/xpzgkwvb"
+            4. That's it — form submissions will be emailed to Henry automatically
+          -->
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@email.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Type of Service Needed *</label>
+              <select id="service" name="service" required onchange="handleServiceChange(this.value)">
+                <option value="" disabled selected>Select a service...</option>
+                <option value="Water Mitigation">Water Mitigation</option>
+                <option value="Fire Restoration">Fire &amp; Smoke Restoration</option>
+                <option value="Drywall">Drywall</option>
+                <option value="Flooring">Flooring</option>
+                <option value="Other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <!-- Shown only for Water Mitigation -->
+            <div id="water-fields">
+              <div class="form-group">
+                <label for="waterCause">What caused the water damage? *</label>
+                <select id="waterCause" name="waterCause">
+                  <option value="" disabled selected>Select cause...</option>
+                  <option value="Burst or leaking pipe">Burst or leaking pipe</option>
+                  <option value="Appliance leak (washer, dishwasher, etc.)">Appliance leak (washer, dishwasher, etc.)</option>
+                  <option value="Roof leak">Roof leak</option>
+                  <option value="Flooding / storm water">Flooding / storm water</option>
+                  <option value="Sewage backup">Sewage backup</option>
+                  <option value="Unknown">Unknown / not sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Describe the Damage or Project</label>
+              <textarea id="message" name="message" placeholder="Tell us what happened, how long ago, and anything else we should know..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredContact">Best Way to Reach You</label>
+              <select id="preferredContact" name="preferredContact">
+                <option value="Phone call">Phone call</option>
+                <option value="Text message">Text message</option>
+                <option value="Email">Email</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form-submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              Send My Request
+            </button>
+            <p class="form-note">No spam. Your info is only used to contact you about your project.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i>
+            <h4>Message Sent!</h4>
+            <p>Thanks for reaching out. Henry will contact you shortly — usually within the hour.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div style="width:120px; height:80px; overflow:hidden; position:relative; margin:0 auto 12px;">
+    <img src="logo.png" alt="Castillo Diamond Construction" style="position:absolute; height:120px; width:120px; top:50%; left:50%; transform:translate(-50%,-50%); filter:brightness(0) invert(1); opacity:0.85;" />
+  </div>
+  <p style="margin-bottom:6px;">
+    <strong>Castillo Diamond Construction, LLC</strong>
+  </p>
+  <p>&copy; 2025 Castillo Diamond Construction, LLC. All rights reserved.</p>
+</footer>
+
+<!-- ── LIGHTBOX ──────────────────────────────────── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<!-- ── SCRIPTS ───────────────────────────────────── -->
+<script>
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Show/hide water damage cause field
+  function handleServiceChange(val) {
+    document.getElementById('water-fields').style.display = val === 'Water Mitigation' ? 'block' : 'none';
+  }
+
+  // Lightbox
+  function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxImg').alt = alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // Form submission — works with Formspree
+  // Once Formspree is configured the page redirects automatically on success.
+  // This handler gives an in-page confirmation for a better UX.
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send My Request';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or call us directly.');
+      }
+    } catch {
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send My Request';
+      btn.disabled = false;
+      alert('Network error. Please try again or call us directly.');
+    }
+  });
+</script>
+
+</body>
+</html>
