@@ -276,7 +276,7 @@
     .trust-item i { color: #7EC8E3; font-size: 18px; }
 
     /* ── SECTION COMMON ─────────────────────────── */
-    section { padding: 96px 24px; }
+    section { padding: 96px 24px; scroll-margin-top: 88px; }
 
     .section-inner {
       max-width: 1200px;
@@ -783,6 +783,7 @@
       .why-image { order: -1; }
       .why-image img { height: 300px; }
       .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid > div:last-child { order: -1; } /* form above info on mobile */
       .form-row { grid-template-columns: 1fr; }
       .gallery-card.wide { grid-column: span 1; }
       .hero-stats { gap: 28px; }
@@ -1082,7 +1083,7 @@
         </div>
         <div class="contact-detail">
           <i class="fa-solid fa-envelope"></i>
-          <span>iHenry.Castillo1979@gmail.com</span>
+          <span>Henry.Castillo1979@gmail.com</span>
         </div>
         <div class="contact-detail">
           <i class="fa-solid fa-location-dot"></i>
