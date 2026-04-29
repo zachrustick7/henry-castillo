@@ -48,7 +48,10 @@
       background: rgba(255,255,255,0.97);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
+      transition: transform 0.3s ease;
     }
+
+    nav.nav-hidden { transform: translateY(-100%); }
 
     .nav-inner {
       max-width: 1200px;
@@ -1101,15 +1104,8 @@
         <div class="contact-form">
           <h3>Get Your Free Estimate</h3>
 
-          <!--
-            SETUP INSTRUCTIONS:
-            1. Go to https://formspree.io and create a free account
-            2. Create a new form and add Henry's email address
-            3. Replace "YOUR_FORM_ID" in the action below with your Formspree form ID
-               Example: action="https://formspree.io/f/xpzgkwvb"
-            4. That's it — form submissions will be emailed to Henry automatically
-          -->
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form id="contactForm" name="contact" netlify data-netlify="true" method="POST">
+            <input type="hidden" name="form-name" value="contact" />
 
             <div class="form-row">
               <div class="form-group">
@@ -1238,9 +1234,7 @@
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  // Form submission — works with Formspree
-  // Once Formspree is configured the page redirects automatically on success.
-  // This handler gives an in-page confirmation for a better UX.
+  // Netlify Forms AJAX submission
   const form = document.getElementById('contactForm');
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -1249,10 +1243,10 @@
     btn.disabled = true;
 
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('/', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
       });
 
       if (res.ok) {
@@ -1268,6 +1262,32 @@
       btn.disabled = false;
       alert('Network error. Please try again or call us directly.');
     }
+  });
+
+  // Hide nav on scroll down, reveal on scroll up — mobile only
+  const navbar = document.getElementById('navbar');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      if (window.innerWidth <= 900) {
+        const current = window.scrollY;
+        if (current > lastScrollY && current > 80) {
+          navbar.classList.add('nav-hidden');
+          // also close the mobile menu if open
+          navLinks.classList.remove('open');
+        } else {
+          navbar.classList.remove('nav-hidden');
+        }
+        lastScrollY = current;
+      } else {
+        navbar.classList.remove('nav-hidden');
+      }
+      ticking = false;
+    });
   });
 </script>
 
