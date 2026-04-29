@@ -60,23 +60,10 @@
       justify-content: space-between;
     }
 
-    /* Render the image larger than the container to crop the built-in whitespace */
-    .nav-logo {
-      display: block;
-      width: 120px;
-      height: 80px;
-      overflow: hidden;
-      position: relative;
-      flex-shrink: 0;
-    }
-
     .nav-logo img {
-      position: absolute;
-      height: 120px;
-      width: 120px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      height: 56px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -1196,9 +1183,7 @@
 
 <!-- ── FOOTER ────────────────────────────────────── -->
 <footer>
-  <div style="width:120px; height:80px; overflow:hidden; position:relative; margin:0 auto 12px;">
-    <img src="logo.png" alt="Castillo Diamond Construction" style="position:absolute; height:120px; width:120px; top:50%; left:50%; transform:translate(-50%,-50%); filter:brightness(0) invert(1); opacity:0.85;" />
-  </div>
+  <img src="logo.png" alt="Castillo Diamond Construction" style="height:56px; width:auto; margin-bottom:12px; opacity:0.85;" />
   <p style="margin-bottom:6px;">
     <strong>Castillo Diamond Construction, LLC</strong>
   </p>
