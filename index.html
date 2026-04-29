@@ -60,10 +60,23 @@
       justify-content: space-between;
     }
 
-    .nav-logo img {
-      height: 56px;
-      width: auto;
+    /* Clip whitespace around logo — image rendered large, container clips to content */
+    .nav-logo {
       display: block;
+      width: 150px;
+      height: 72px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      position: absolute;
+      height: 150px;
+      width: 150px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .nav-links {
@@ -824,7 +837,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="#top">
-      <img src="logo.png" alt="Castillo Diamond Construction, LLC" />
+      <img src="logo_large_bg_removed.png" alt="Castillo Diamond Construction, LLC" />
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
@@ -1183,7 +1196,7 @@
 
 <!-- ── FOOTER ────────────────────────────────────── -->
 <footer>
-  <img src="logo.png" alt="Castillo Diamond Construction" style="height:56px; width:auto; margin-bottom:12px; opacity:0.85;" />
+  <img src="logo_large_bg_removed.png" alt="Castillo Diamond Construction" style="height:56px; width:auto; margin-bottom:12px; opacity:0.85;" />
   <p style="margin-bottom:6px;">
     <strong>Castillo Diamond Construction, LLC</strong>
   </p>
